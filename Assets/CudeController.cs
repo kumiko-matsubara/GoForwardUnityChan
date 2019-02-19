@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CudeController : MonoBehaviour {
+public class CudeController : MonoBehaviour
+{
 
 
     //キューブの移動速度
@@ -15,15 +16,17 @@ public class CudeController : MonoBehaviour {
     private AudioSource audioSource;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
 
-     audioSource = gameObject.GetComponent<AudioSource>();
-       
+        audioSource = gameObject.GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         //キューブを移動させる
         transform.Translate(this.speed, 0, 0);
 
@@ -32,14 +35,18 @@ public class CudeController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
- 
+
     }
     //衝突時に呼ばれる変数
-    void OnCollisionEnter2D(Collision2D other) {
+    void OnCollisionEnter2D(Collision2D other)
+    {
+
+        if (other.gameObject.tag == "CubePrefabTag" || other.gameObject.tag == "groundTag") 
+        
 
             audioSource.Play();
         }
-    
-        }
-	
+
+    }
+
 

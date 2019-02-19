@@ -43,7 +43,7 @@ public class UnityChanController : MonoBehaviour {
 
         //ジャンプ状態のときにはボリュームを０にする
         GetComponent<AudioSource>().volume = (isGround) ? 1 : 0;
-      
+
 
         //着地状態でクリックされた場合
         if (Input.GetMouseButtonDown(0) && isGround)
